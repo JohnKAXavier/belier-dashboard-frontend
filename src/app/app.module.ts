@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgIf, DatePipe} from '@angular/common';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSort, MatSortModule, SortDirection} from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import {MatSort, MatSortModule, SortDirection} from '@angular/material/sort';
     MatProgressSpinnerModule,
     MatSortModule,
     NgIf,
-    DatePipe
+    DatePipe,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

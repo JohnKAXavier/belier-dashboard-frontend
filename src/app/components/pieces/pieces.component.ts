@@ -5,6 +5,7 @@ import { faEye, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { PieceService } from 'src/app/services/piece/piece.service';
 import { Piece, PieceColumns } from 'src/app/model/piece';
 import { catchError, startWith, switchMap, Observable, of as observableOf, merge, map } from 'rxjs';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pieces',
@@ -12,7 +13,7 @@ import { catchError, startWith, switchMap, Observable, of as observableOf, merge
   styleUrls: ['./pieces.component.scss']
 })
 export class PiecesComponent implements AfterViewInit {
-  displayedColumns: string[] = PieceColumns.map(res => {return res.key});    
+  displayedColumns: string[] = PieceColumns.map(res => {return res.key});      
   data: Piece[] = [];
   piecesRes!: Piece;
   faEye = faEye;
@@ -25,10 +26,18 @@ export class PiecesComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private pieceService: PieceService){
+  constructor(private pieceService: PieceService, private router: Router){
   }
 
   ngOnInit(){    
+  }
+
+  navigateToEdit(id: any){    
+    this.router.navigate(['piece', id, 'details']);
+  }
+
+  delete(id: any){
+    //TODO: desenvolver delete
   }
 
   ngAfterViewInit() {    

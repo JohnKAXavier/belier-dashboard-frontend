@@ -47,4 +47,9 @@ export const PieceColumns = [
     type: 'text',
     label: 'transactionType',
   },
+  {
+    key: 'actions',
+    type: 'text',
+    label: 'actions',
+  }
 ];
